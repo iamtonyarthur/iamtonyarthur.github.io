@@ -1,4 +1,3 @@
-# iamtonyarthur.github.io
-iamtonyarthur is the personal website for [Tony Arthur](https://www.iamtonyarthur.com).
+# Tony Arthur
 
-You can reach me on Twitter [@iamtonyarthur](https://twitter.com/iamtonyarthur).
+Personal site — [iamtonyarthur.com](https://www.iamtonyarthur.com)
