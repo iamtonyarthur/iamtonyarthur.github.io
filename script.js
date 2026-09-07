@@ -181,4 +181,3 @@ function buildDotSep(canvas) {
 }
 
 buildDotSep(document.getElementById('dotSepTop'));
-buildDotSep(document.getElementById('dotSepBottom'));
