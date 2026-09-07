@@ -128,7 +128,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px var(--gutter) 80px;
+    padding: 92px var(--gutter) 40px;
     position: relative;
     overflow: hidden;
 }
@@ -152,43 +152,21 @@ body {
 .hero-eyebrow {
     font-size: 13px;
     color: var(--ink-mid);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     opacity: 0;
-    animation: fadeUp 0.9s ease 0.3s forwards;
+    animation: fadeUp 0.9s ease 0.2s forwards;
 }
 
-.hero-title {
+.hero-name-title {
     font-family: var(--display);
-    font-size: clamp(52px, 9vw, 120px);
+    font-size: clamp(64px, 12vw, 160px);
     font-weight: 700;
     line-height: 1.0;
-    letter-spacing: -0.035em;
-    margin: 0 0 40px;
+    letter-spacing: -0.03em;
+    margin: 0 0 28px;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
 }
-
-.hero-title em {
-    font-style: normal;
-    color: #ff9500;
-}
-
-.hero-title em .accent {
-    color: var(--accent);
-}
-
-.hero-title .line {
-    display: block;
-    overflow: hidden;
-}
-
-.hero-title .line > span {
-    display: block;
-    transform: translateY(110%);
-    animation: riseUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.hero-title .line:nth-child(1) > span { animation-delay: 0.45s; }
-.hero-title .line:nth-child(2) > span { animation-delay: 0.58s; }
-.hero-title .line:nth-child(3) > span { animation-delay: 0.71s; }
 
 .hero-subtitle {
     font-size: clamp(17px, 1.9vw, 20px);
@@ -197,7 +175,7 @@ body {
     max-width: 44ch;
     font-weight: 400;
     opacity: 0;
-    animation: fadeUp 1s ease 1s forwards;
+    animation: fadeUp 1s ease 0.6s forwards;
 }
 
 .hero-cta {
@@ -305,7 +283,7 @@ body {
 .dot-sep-canvas {
     display: block;
     width: 100%;
-    height: 64px;
+    height: 20px;
 }
 
 /* ─── ABOUT ──────────────────────────────────────────── */
@@ -389,7 +367,11 @@ body {
 /* ─── BELIEF ─────────────────────────────────────────── */
 
 .belief {
-    padding: 140px var(--gutter) 80px;
+    padding: 220px var(--gutter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .belief-inner {
@@ -403,63 +385,6 @@ body {
     font-weight: 600;
     line-height: 1.22;
     letter-spacing: -0.022em;
-}
-
-/* ─── NOW ────────────────────────────────────────────── */
-
-.now {
-    padding: 80px var(--gutter) 140px;
-}
-
-.now-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-}
-
-.now-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 0;
-}
-
-.now-block {
-    flex: 1;
-    padding: 0 52px;
-}
-
-.now-block:first-child { padding-left: 0; }
-.now-block:last-child  { padding-right: 0; }
-
-.now-rule {
-    width: 1px;
-    align-self: stretch;
-    min-height: 100px;
-    background: rgba(255, 255, 255, 0.12);
-    flex-shrink: 0;
-}
-
-.now-title {
-    font-family: var(--display);
-    font-size: clamp(28px, 3vw, 48px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 10px;
-    color: #f5f4f0;
-}
-
-.now-role {
-    font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #5eead4;
-    margin-bottom: 16px;
-}
-
-.now-detail {
-    font-size: clamp(16px, 1.5vw, 18px);
-    color: rgba(245, 244, 240, 0.6);
-    line-height: 1.75;
 }
 
 /* ─── CAREER TIMELINE ────────────────────────────────── */
@@ -524,7 +449,7 @@ body {
     font-size: clamp(15px, 1.4vw, 17px);
     color: var(--ink-mid);
     line-height: 1.8;
-    max-width: 60ch;
+    max-width: 85ch;
 }
 
 /* ─── PRINCIPLES ─────────────────────────────────────── */
@@ -575,7 +500,7 @@ body {
     font-size: clamp(16px, 1.5vw, 18px);
     color: var(--ink-mid);
     line-height: 1.8;
-    max-width: 60ch;
+    max-width: 85ch;
 }
 
 /* ─── FOOTER ─────────────────────────────────────────── */
@@ -675,8 +600,7 @@ body {
 /* ─── REDUCED MOTION ─────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-    .hero-title .line > span,
-    .hero-eyebrow, .hero-subtitle, .hero-cta,
+    .hero-name-title, .hero-eyebrow, .hero-subtitle, .hero-cta,
     .logo, .nav-links, .scroll-indicator {
         animation: none;
         opacity: 1;
@@ -697,20 +621,6 @@ body {
 
     .about-image { max-width: 400px; }
 
-    .now-row {
-        flex-direction: column;
-        gap: 48px;
-    }
-
-    .now-rule {
-        width: 100%;
-        height: 1px;
-        min-height: unset;
-        align-self: auto;
-    }
-
-    .now-block { padding: 0; }
-
     .footer-inner {
         grid-template-columns: 1fr;
     }
@@ -730,8 +640,8 @@ body {
     .nav.scrolled { padding: 14px var(--gutter); }
     .nav-links { gap: 20px; }
 
-    .hero { padding: 110px var(--gutter) 80px; }
-    .hero-title { font-size: clamp(40px, 12vw, 60px); }
+    .hero { justify-content: center; padding: 92px var(--gutter) 40px; }
+    .hero-name-title { font-size: clamp(44px, 15vw, 72px); }
     .hero-cta {
         flex-direction: column;
         align-items: flex-start;
@@ -745,8 +655,7 @@ body {
     .principles,
     .footer { padding-top: 96px; padding-bottom: 96px; }
 
-    .belief { padding: 80px var(--gutter) 60px; }
-    .now { padding: 60px var(--gutter) 96px; }
+    .belief { padding: 150px var(--gutter); }
 
     .timeline-item {
         grid-template-columns: 1fr;
