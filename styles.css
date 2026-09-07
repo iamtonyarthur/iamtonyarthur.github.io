@@ -128,7 +128,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 92px var(--gutter) 40px;
+    padding: 140px var(--gutter);
     position: relative;
     overflow: hidden;
 }
@@ -150,25 +150,32 @@ body {
 }
 
 .hero-eyebrow {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    margin-bottom: 24px;
     font-size: 13px;
     color: var(--ink-mid);
-    margin-bottom: 24px;
     opacity: 0;
     animation: fadeUp 0.9s ease 0.2s forwards;
 }
 
 .hero-name-title {
     font-family: var(--display);
-    font-size: clamp(64px, 12vw, 160px);
+    font-size: clamp(64px, min(8vw + 6vh, 13vw), 200px);
     font-weight: 700;
     line-height: 1.0;
     letter-spacing: -0.03em;
-    margin: 0 0 28px;
+    margin: 0;
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards;
 }
 
 .hero-subtitle {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 28px;
     font-size: clamp(17px, 1.9vw, 20px);
     color: var(--ink-mid);
     line-height: 1.7;
@@ -640,8 +647,8 @@ body {
     .nav.scrolled { padding: 14px var(--gutter); }
     .nav-links { gap: 20px; }
 
-    .hero { justify-content: center; padding: 92px var(--gutter) 40px; }
-    .hero-name-title { font-size: clamp(44px, 15vw, 72px); }
+    .hero { padding: 110px var(--gutter); }
+    .hero-name-title { font-size: clamp(44px, min(10vw + 8vh, 15.5vw), 100px); }
     .hero-cta {
         flex-direction: column;
         align-items: flex-start;
