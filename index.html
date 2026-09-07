@@ -3,194 +3,223 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tony Arthur - Security Engineering Leader</title>
-    
+    <title>Tony Arthur — Security &amp; Software Engineering Leader</title>
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Security engineering leader at Amazon. Building security that accelerates engineering teams and protects the organizations depending on them.">
+    <meta name="description" content="Security and software engineering leader at Amazon. Building security that accelerates engineering teams and protects the organizations depending on them.">
     <meta name="author" content="Tony Arthur">
-    
+
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.iamtonyarthur.com/">
-    <meta property="og:title" content="Tony Arthur - Security Engineering Leader">
+    <meta property="og:title" content="Tony Arthur — Security &amp; Software Engineering Leader">
     <meta property="og:description" content="Security built from the inside out. Building security that engineers use and organizations rely on.">
     <meta property="og:image" content="https://www.iamtonyarthur.com/img/tony.jpeg">
-    
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="alternate icon" href="favicon.ico">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
+    <noscript>
+        <style>
+            .reveal { opacity: 1; transform: none; }
+        </style>
+    </noscript>
 </head>
 <body>
     <nav class="nav" id="nav" aria-label="Main navigation">
-        <a href="#" class="logo" aria-label="Tony Arthur - Home">Tony Arthur</a>
+        <a href="#" class="logo" aria-label="Tony Arthur — Home">TA<span class="logo-dot">.</span></a>
         <div class="nav-links">
+            <a href="/blog/">Blog</a>
             <a href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub</a>
         </div>
     </nav>
 
     <!-- HERO -->
-    <section class="hero" aria-label="Introduction">
+    <header class="hero" aria-label="Introduction">
+        <canvas id="grid" class="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero-content">
-            <h1 class="hero-title">Security built from<br>the inside <em>out.</em></h1>
-            <p class="hero-subtitle">Built to accelerate engineering teams and protect the organizations depending on them.</p>
+            <p class="hero-eyebrow mono">Tony Arthur — Security &amp; Software Engineering Leader</p>
+            <h1 class="hero-title">
+                <span class="line"><span>Security built</span></span>
+                <span class="line"><span>from the inside</span></span>
+                <span class="line"><span><em>out<span class="accent">.</span></em></span></span>
+            </h1>
+            <p class="hero-subtitle">I build security that accelerates engineering teams —
+            and protects the organizations depending on them.</p>
             <div class="hero-cta">
                 <a class="btn-primary" href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">
                     Connect on LinkedIn
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                         <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </a>
-                <a class="btn-ghost" href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub</a>
+                <a class="btn-ghost" href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub ↗</a>
             </div>
         </div>
-        <div class="scroll-indicator" id="scrollIndicator">
-            <span class="scroll-text">Scroll to explore</span>
-            <svg class="scroll-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path d="M12 5v14M19 12l-7 7-7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <div class="scroll-indicator" id="scrollIndicator" aria-hidden="true">
+            <span class="mono">scroll</span>
+            <span class="scroll-line"></span>
         </div>
-        <div class="hero-deco" aria-hidden="true">TA</div>
-    </section>
+    </header>
+
+    <!-- DOT SEPARATOR -->
+    <div class="dot-sep" aria-hidden="true">
+        <canvas class="dot-sep-canvas" id="dotSepTop"></canvas>
+    </div>
 
     <!-- ABOUT -->
-    <section class="slide about-section" aria-label="About Tony Arthur">
+    <section class="about" aria-label="About Tony Arthur">
         <div class="about-grid">
             <div class="about-image reveal">
-                <img src="img/tony.jpeg" alt="Tony Arthur - Security Engineering Leader" loading="lazy" />
-                <div class="img-placeholder">
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
-                        <circle cx="60" cy="45" r="20" fill="rgba(0,0,0,0.1)"/>
-                        <path d="M30 95c0-16.5 13.5-30 30-30s30 13.5 30 30" fill="rgba(0,0,0,0.1)"/>
-                    </svg>
+                <div class="frame">
+                    <img src="img/tony.jpeg" alt="Tony Arthur — Security &amp; Software Engineering Leader" loading="lazy" />
                 </div>
             </div>
             <div class="about-text">
-                <p class="eyebrow accent-blue reveal">About</p>
-                <h2 class="about-title reveal">Most security leaders stop being engineers the moment they become leaders. I never did.</h2>
+                <p class="eyebrow mono reveal about-eyebrow">// About</p>
+                <h2 class="about-title reveal">Most security leaders stop being engineers the moment they become leaders. <span class="accent-gradient">I never did.</span></h2>
                 <p class="about-description reveal">
-                    I write code and I run teams. I've built systems at Amazon scale and led enterprise 
-                    security strategy as a CISO. That combination — hands-on technical depth alongside 
-                    leadership — is what lets me build security that engineers actually use and 
-                    organizations actually rely on.
+                    I write code and I run teams. I've built systems at Amazon scale and led
+                    enterprise security strategy as a CISO. That combination of hands-on
+                    technical depth and leadership is what lets me build security that gets
+                    adopted, not just deployed, and that organizations can actually rely on.
                 </p>
                 <p class="about-description reveal">
-                    The career arc tells the story: founding a behavior-based threat detection startup, 
-                    leading incident response against nation-state actors, serving as CISO at Canadian 
-                    Pacific Railway, leading security analytics and engineering teams at AWS, and now 
-                    building AI-powered application security systems at Amazon. Different scales, different 
-                    industries — the same conviction throughout.
+                    The arc: founding a behavior-based threat detection startup, running
+                    incident response against nation-state actors, serving as CISO at
+                    Canadian Pacific, leading security analytics and engineering
+                    at AWS — and now, building AI-powered application security at Amazon.
+                    Different scales, different industries, the same conviction throughout.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- BELIEF -->
-    <section class="slide belief">
-        <div class="slide-content reveal">
-            <h2 class="belief-title">Security done right is a <span class="accent-gradient">force multiplier</span> —<br>for engineers and for the organization.</h2>
-        </div>
-    </section>
+    <!-- DARK CHAPTER: BELIEF + NOW -->
+    <div class="dark-chapter">
+        <section class="belief">
+            <div class="belief-inner">
+                <h2 class="belief-title reveal">Security done right is a <span class="accent-gradient">force multiplier</span><br class="belief-br"> for engineers and for the organization.</h2>
+            </div>
+        </section>
 
-    <!-- AMAZON SLIDE -->
-    <section class="slide dark">
-        <div class="slide-content reveal">
-            <p class="eyebrow accent-orange eyebrow-spaced">Recent Experience</p>
-            <div class="dual-role-container">
-                <div class="dual-role-block">
-                    <h2 class="slide-title">Amazon</h2>
-                    <p class="slide-subtitle">Sr Manager, Security Engineering</p>
-                    <p class="slide-detail">Building AI-powered security systems that accelerate engineering teams</p>
-                </div>
-                <div class="role-divider-vertical"></div>
-                <div class="dual-role-block">
-                    <h2 class="slide-title">AWS</h2>
-                    <p class="slide-subtitle">Sr Manager, Software Engineering</p>
-                    <p class="slide-detail">Security analytics and engineering at Amazon scale</p>
+        <section class="now" aria-label="Current roles">
+            <div class="now-inner">
+                <p class="eyebrow mono reveal">// Now</p>
+                <div class="now-row">
+                    <article class="now-block reveal">
+                        <h3 class="now-title">Amazon</h3>
+                        <p class="now-role">Sr Manager, Security Engineering</p>
+                        <p class="now-detail">AI-powered security systems that accelerate engineering teams.</p>
+                    </article>
+                    <div class="now-rule" aria-hidden="true"></div>
+                    <article class="now-block reveal">
+                        <h3 class="now-title">AWS</h3>
+                        <p class="now-role">Sr Manager, Software Engineering</p>
+                        <p class="now-detail">Security analytics and engineering at Amazon scale.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
+
+    <!-- DOT SEPARATOR BOTTOM -->
+    <div class="dot-sep" aria-hidden="true">
+        <canvas class="dot-sep-canvas" id="dotSepBottom"></canvas>
+    </div>
 
     <!-- CAREER -->
-    <section class="timeline-section">
+    <section class="timeline-section" aria-label="Career">
         <div class="timeline">
             <div class="timeline-header reveal">
-                <p class="eyebrow accent-blue eyebrow-spaced">Career</p>
+                <p class="eyebrow mono">// Career</p>
                 <h2>A deliberate arc.<br>Always forward.</h2>
             </div>
             <div class="timeline-item reveal">
-                <div class="timeline-year">Present</div>
+                <div class="timeline-year mono">Present</div>
                 <div class="timeline-body">
                     <div class="timeline-role">Sr Manager, Security Engineering</div>
                     <div class="timeline-company">Amazon</div>
-                    <div class="timeline-desc">Leading Application Security for a major business unit at Amazon. Building AI-powered security tooling that measurably accelerates engineering teams — making security a velocity enabler, not a bottleneck.</div>
+                    <div class="timeline-desc">Leading Application Security for a major Amazon business unit. Building AI-powered security tooling that accelerates engineering teams — security as a velocity enabler, not a bottleneck.</div>
                 </div>
             </div>
             <div class="timeline-item reveal">
-                <div class="timeline-year">AWS</div>
+                <div class="timeline-year mono">AWS</div>
                 <div class="timeline-body">
                     <div class="timeline-role">Sr Manager, Software Engineering</div>
                     <div class="timeline-company">Amazon Web Services</div>
-                    <div class="timeline-desc">Architected, started, and led engineering teams building security services at Amazon scale — responsible for systems protecting millions of users across global infrastructure.</div>
+                    <div class="timeline-desc">Architected, started, and led engineering teams building active defense security services at Amazon scale — systems protecting millions of users across global infrastructure.</div>
                 </div>
             </div>
             <div class="timeline-item reveal">
-                <div class="timeline-year">CP Rail</div>
+                <div class="timeline-year mono">CP</div>
                 <div class="timeline-body">
                     <div class="timeline-role">Sr Director / CISO</div>
-                    <div class="timeline-company">Canadian Pacific Railway</div>
-                    <div class="timeline-desc">Full accountability for enterprise security strategy across a $14B critical infrastructure operator — board-level reporting, nation-state incident response, and defense against elite red teams and adversaries.</div>
+                    <div class="timeline-company">Canadian Pacific</div>
+                    <div class="timeline-desc">Full accountability for enterprise security across a $14B critical infrastructure operator — board-level reporting, nation-state incident response, and defense against elite red teams.</div>
                 </div>
             </div>
             <div class="timeline-item reveal">
-                <div class="timeline-year">Founded</div>
+                <div class="timeline-year mono">Founded</div>
                 <div class="timeline-body">
                     <div class="timeline-role">Founder</div>
                     <div class="timeline-company">SevenTwentyNine</div>
-                    <div class="timeline-desc">Built a behavior-based endpoint threat detection and response platform that caught threats others missed — without adding friction. Security should protect without obstructing — that conviction starts here.</div>
+                    <div class="timeline-desc">Built a behavior-based endpoint threat detection and response platform that caught what others missed. Security should protect without obstructing. That conviction starts here.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PRINCIPLES -->
-    <section class="slide dark">
-        <div class="slide-content reveal">
-            <p class="eyebrow accent-orange">01</p>
-            <h2 class="principle-title">Security is a design problem</h2>
-            <p class="principle-text">Security that creates friction gets bypassed — and bypassed security protects nothing. Building it into how people work, from the start, beats bolting it on after.</p>
+    <section class="principles" aria-label="Principles">
+        <div class="principles-inner">
+            <div class="principles-header">
+                <p class="eyebrow mono reveal">// Principles</p>
+            </div>
+            <div class="principle reveal">
+                <span class="principle-num">01</span>
+                <div>
+                    <h3 class="principle-title">Security is a design problem</h3>
+                    <p class="principle-text">Security that creates friction gets bypassed — and bypassed security protects nothing. Build it into how people work from the start.</p>
+                </div>
+            </div>
+            <div class="principle reveal">
+                <span class="principle-num">02</span>
+                <div>
+                    <h3 class="principle-title">AI changes the attack surface — and the defense</h3>
+                    <p class="principle-text">Adversaries use AI to move faster and at greater scale. The only viable response is a security program that uses it too — for detection, triage, and eliminating the manual work that slows defenders down.</p>
+                </div>
+            </div>
+            <div class="principle reveal">
+                <span class="principle-num">03</span>
+                <div>
+                    <h3 class="principle-title">The adversary doesn't slow down</h3>
+                    <p class="principle-text">Nation-states, ransomware groups, and insiders operate at speed. Programs that can't match that pace are already behind. Close the gap with automation — detection, response, and remediation that doesn't wait for a human to notice.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="slide">
-        <div class="slide-content reveal">
-            <p class="eyebrow accent-blue">02</p>
-            <h2 class="principle-title">AI changes the attack surface and the defense</h2>
-            <p class="principle-text">Adversaries are using AI to operate faster and at greater scale. The only viable response is security programs that use it too — for detection, triage, and eliminating the manual work that slows defenders down.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <h2 class="footer-title reveal">Say hello<span class="accent">.</span></h2>
+            <div class="footer-links reveal">
+                <a href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+            <span class="footer-text mono reveal">Tony Arthur — Security &amp; Software Engineering Leader</span>
         </div>
-    </section>
-
-    <section class="slide dark">
-        <div class="slide-content reveal">
-            <p class="eyebrow accent-purple">03</p>
-            <h2 class="principle-title">The adversary doesn't slow down</h2>
-            <p class="principle-text">Nation-states, ransomware groups, and insider threats operate at speed and scale. Security programs that can't match that pace are already behind. The only way to close the gap is automation — detection, response, and remediation that doesn't wait for a human to notice.</p>
-        </div>
-    </section>
-
-    <footer class="footer dark">
-        <span class="footer-text">Tony Arthur — Security & Software Engineering Leader</span>
     </footer>
 
     <script src="script.js"></script>

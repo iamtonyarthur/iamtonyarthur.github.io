@@ -1,2 +1,10 @@
 # Ignore DS_Store
 .DS_Store
+
+# IDE / tool config
+.vscode/
+.claude/
+
+# Jekyll build output
+_site/
+.jekyll-cache/
