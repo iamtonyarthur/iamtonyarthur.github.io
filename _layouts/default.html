@@ -1,0 +1,64 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if page.title %}{{ page.title }} — Tony Arthur{% else %}Tony Arthur{% endif %}</title>
+
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+    <meta name="author" content="Tony Arthur">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}Tony Arthur{% endif %}">
+    <meta property="og:description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.image | default: '/img/tony.jpeg' }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="alternate icon" href="/favicon.ico">
+    {% feed_meta %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog.css">
+    <noscript>
+        <style>
+            .reveal { opacity: 1; transform: none; }
+        </style>
+    </noscript>
+</head>
+<body>
+    <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="/" class="logo" aria-label="Tony Arthur — Home">TA<span class="logo-dot">.</span></a>
+        <div class="nav-links">
+            <a href="/blog/">Blog</a>
+            <a href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="blog-main">
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <h2 class="footer-title">Say hello<span class="accent">.</span></h2>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">LinkedIn ↗</a>
+                <a href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+            <span class="footer-text mono">Tony Arthur — Security &amp; Software Engineering Leader</span>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
