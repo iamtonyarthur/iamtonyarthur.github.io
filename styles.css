@@ -128,7 +128,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 120px var(--gutter) 80px;
+    padding: 92px var(--gutter) 40px;
     position: relative;
     overflow: hidden;
 }
@@ -640,7 +640,7 @@ body {
     .nav.scrolled { padding: 14px var(--gutter); }
     .nav-links { gap: 20px; }
 
-    .hero { justify-content: flex-start; padding: 140px var(--gutter) 80px; }
+    .hero { justify-content: center; padding: 92px var(--gutter) 40px; }
     .hero-name-title { font-size: clamp(44px, 15vw, 72px); }
     .hero-cta {
         flex-direction: column;

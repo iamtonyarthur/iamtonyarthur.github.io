@@ -38,45 +38,42 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const ctx = canvas.getContext('2d');
-    const GAP = 36;
-    const RADIUS = 170;
-    let dots = [];
+    const CLUSTER = 7;
+    const CLUSTER_GAP = 16;
     const mouse = { x: -9999, y: -9999 };
     let raf = null;
 
-    function build() {
+    function resize() {
         const dpr = Math.min(window.devicePixelRatio || 1, 2);
         const w = canvas.offsetWidth;
         const h = canvas.offsetHeight;
         canvas.width = w * dpr;
         canvas.height = h * dpr;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-        dots = [];
-        for (let x = GAP / 2; x < w; x += GAP) {
-            for (let y = GAP / 2; y < h; y += GAP) {
-                dots.push({ x, y });
-            }
-        }
     }
 
     function draw() {
         const w = canvas.offsetWidth;
         const h = canvas.offsetHeight;
         ctx.clearRect(0, 0, w, h);
-        for (const d of dots) {
-            const dx = d.x - mouse.x;
-            const dy = d.y - mouse.y;
-            const dist = Math.hypot(dx, dy);
-            const t = Math.max(0, 1 - dist / RADIUS);
-            // Base dots are barely-there; near the cursor they grow and glow accent
-            if (t > 0.02) {
-                ctx.fillStyle = `rgba(15, 118, 110, ${0.06 + t * 0.4})`;
-            } else {
-                ctx.fillStyle = 'rgba(29, 29, 31, 0.05)';
+
+        if (mouse.x > -9000) {
+            const half = (CLUSTER - 1) / 2;
+            const maxDist = Math.hypot(half * CLUSTER_GAP, half * CLUSTER_GAP);
+            for (let i = 0; i < CLUSTER; i++) {
+                for (let j = 0; j < CLUSTER; j++) {
+                    const x = mouse.x + (i - half) * CLUSTER_GAP;
+                    const y = mouse.y + (j - half) * CLUSTER_GAP;
+                    const dist = Math.hypot(x - mouse.x, y - mouse.y);
+                    // Same radial fade-towards-edges curve as the dot separators
+                    const base = Math.pow(Math.max(0, 1 - dist / maxDist), 1.6);
+                    if (base < 0.02) continue;
+                    ctx.fillStyle = `rgba(15, 118, 110, ${base * 0.55})`;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 1 + base * 1.6, 0, Math.PI * 2);
+                    ctx.fill();
+                }
             }
-            ctx.beginPath();
-            ctx.arc(d.x - dx * t * 0.08, d.y - dy * t * 0.08, 1 + t * 1.6, 0, Math.PI * 2);
-            ctx.fill();
         }
         raf = null;
     }
@@ -85,10 +82,10 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         if (!raf) raf = requestAnimationFrame(draw);
     }
 
-    build();
+    resize();
     draw();
 
-    window.addEventListener('resize', () => { build(); schedule(); });
+    window.addEventListener('resize', () => { resize(); schedule(); });
 
     if (!reduceMotion) {
         window.addEventListener('mousemove', (e) => {
