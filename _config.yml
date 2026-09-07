@@ -1,0 +1,7 @@
+title: Tony Arthur
+description: "Notes on security engineering, AI, and building teams that ship."
+url: "https://www.iamtonyarthur.com"
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+permalink: /blog/:title/
