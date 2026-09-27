@@ -1,0 +1,63 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% if page.title %}{{ page.title | escape }} | Tony Arthur{% else %}Tony Arthur{% endif %}</title>
+
+    <meta name="description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 | escape }}">
+    <meta name="author" content="Tony Arthur">
+
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+    <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}Tony Arthur{% endif %}">
+    <meta property="og:description" content="{{ page.description | default: page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 | escape }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.image | default: '/img/og.png' }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    {% feed_meta %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/schibsted-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+    <nav class="nav" aria-label="Main navigation">
+        <a href="/" class="logo" aria-label="Tony Arthur, home">TA<span class="logo-dot">.</span></a>
+        <div class="nav-links">
+            <a href="/blog/">Blog</a>
+            <a href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/iamtonyarthur" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </nav>
+
+    <main class="page blog-main">
+        {{ content }}
+    </main>
+
+    <footer class="footer-band">
+        <div class="footer">
+            <h2 class="footer-title">Say hello<span class="accent">.</span></h2>
+            <div class="buttons">
+                <a class="button" href="https://www.linkedin.com/in/tonyarthur" target="_blank" rel="noopener">Connect on LinkedIn</a>
+                <a class="text-link" href="/">or go back home</a>
+            </div>
+            <div class="footer-meta">
+                <span>&copy; {{ site.time | date: '%Y' }} Tony Arthur</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
