@@ -31,6 +31,8 @@
 
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/blog.css">
+    {% for href in page.stylesheets %}<link rel="stylesheet" href="{{ href }}">
+    {% endfor %}
 </head>
 <body>
     <nav class="nav" aria-label="Main navigation">
@@ -46,6 +48,7 @@
         {{ content }}
     </main>
 
+    {% unless page.hide_footer %}
     <footer class="footer-band">
         <div class="footer">
             <h2 class="footer-title">Say hello<span class="accent">.</span></h2>
@@ -58,6 +61,7 @@
             </div>
         </div>
     </footer>
+    {% endunless %}
 
 </body>
 </html>
